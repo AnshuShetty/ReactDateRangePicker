@@ -48,6 +48,44 @@ npm install date-fns
 yarn add date-fns
 ```
 
+### Material UI (MUI)
+
+If you plan to use Material UI for styling or to integrate the picker with MUI components, install MUI (v5+) and its peer emotion packages:
+
+Using npm:
+
+```bash
+npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
+```
+
+Using Yarn:
+
+```bash
+yarn add @mui/material @mui/icons-material @emotion/react @emotion/styled
+```
+
+Basic example — wrap your app with MUI's `ThemeProvider` and `CssBaseline`:
+
+```tsx
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+
+const theme = createTheme({
+  /* customize here */
+});
+
+function Root() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  );
+}
+```
+
+Note: `CustomDateRangePicker.tsx` does not rely on MUI by default — MUI is optional. If you want me to adapt the component to use MUI components or styles, I can do that next.
+
 ## Usage (example)
 
 Drop the component into your project and import it where you need the date-range picker.
